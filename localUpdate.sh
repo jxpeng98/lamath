@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# python update.py $1
+
+mkdir -p "$HOME/Library/Application Support/typst/packages/local/lamath/$1"
+if [ ! -d "$HOME/Library/Application Support/typst/packages/local/lamath/$1" ]; then
+    echo "Failed to create directory"
+    exit 1
+fi
+
+if [ -f paper_template.typ ] && [ -f typst.toml ]; then
+    cp -r paper_template.typ typst.toml "$HOME/Library/Application Support/typst/packages/local/lamath/$1"
+    echo "Successfully copied files to $HOME/Library/Application Support/typst/packages/local/lamath/$1"
+else
+    echo "One or more files do not exist in the current directory."
+    exit 1
+fi

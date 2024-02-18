@@ -1,0 +1,7 @@
+[package]
+name = "lamath"
+version = "0.1.0"
+entrypoint = "lamath.typ"
+authors = [ "Jiaxin PENG",]
+license = "Unlicense"
+description = "LaTex Math Symbols to Typst"
